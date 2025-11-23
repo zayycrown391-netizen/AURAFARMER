@@ -54,83 +54,43 @@
     gap: .2604vw
 }
 
-/* === SUPER CLEAN PREMIUM SCROLLBAR — 100% WORKING WITH MARGIN-TOP === */
 .PWrapper .PElements .PScroll {
     position: absolute;
-    right: -1vw;
-    width: 0.85vw; 
-    height: 100%;
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 0.35vw;
-    backdrop-filter: blur(0.3vw);
-
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    right: -.8vw;
+    width: .5208vw;
+    height: 100%;
+    background-color: #000000;
+    justify-content: center;
     align-items: center;
-
-    padding: 0.35vw 0;
-    gap: 0.3vw;
-
-    transition: width .25s ease, background .25s ease;
+    flex-direction: column;
+    gap: .1042vw;
+    border-radius: .1042vw
 }
 
-/* Hover animation */
-.PWrapper .PElements .PScroll:hover {
-    width: 0.95vw;
-    background: rgba(0,0,0,0.75);
-}
-
-/* Arrow icons */
 .PWrapper .PElements .PScroll i {
-    font-size: 0.55vw;
-    color: #ffffffcc;
-    transition: transform .2s ease, opacity .2s ease;
+    font-size: .5208vw;
+    color: #fff
 }
 
-.PWrapper .PElements .PScroll i:hover {
-    opacity: 1;
-    transform: scale(1.15);
-}
-
-/* The track */
 .PWrapper .PElements .PScroll .PSProgressWrapper {
     position: relative;
-    width: 0.32vw;
-    height: 93%;         /* KEEP THIS */
     display: flex;
+    width: .2083vw;
+    height: 93%;
     justify-content: center;
-    align-items: flex-start;   /* THIS MUST STAY TO MAKE IT MOVE */
+    align-items: flex-start
 }
 
-/* === MOVING RED THUMB (margin-top animation) === */
 .PWrapper .PElements .PScroll .PSProgress {
-    position: relative;        /* REQUIRED FOR margin-top movement */
-    width: 0.32vw;
-    height: 1.3vw;             /* small red bar */
-    margin-top: 0;             /* JS updates this */
-
-    background: rgb(var(--menu-color));
-    border-radius: 0.4vw;
-
-    box-shadow:
-        0 0 0.35vw 0.12vw rgba(var(--menu-color), 0.9),
-        0 0 1vw 0.1vw rgba(var(--menu-color), 0.35);
-
-    transition:
-        margin-top 0.25s cubic-bezier(.17,.67,.53,1.52),  /* the jelly */
-        height 0.25s cubic-bezier(.17,.67,.53,1.52),
-        box-shadow 0.25s ease;
+    position: relative;
+    display: flex;
+    width: .2083vw;
+    margin-top: .1302vw;
+    background-color: rgb(var(--menu-color));
+    box-shadow: 0 0 .1042vw .0521vw rgba(var(--menu-color),1);
+    transition: top .25s ease,height .25s ease
 }
-
-/* Hover glow */
-.PWrapper .PElements .PScroll .PSProgress:hover {
-    height: 1.7vw;
-    box-shadow:
-        0 0 0.55vw 0.25vw rgba(var(--menu-color), 1),
-        0 0 1.4vw 0.2vw rgba(var(--menu-color), 0.55);
-}
-
 
 .PWrapper .PElements .PRightElements {
     position: relative;
@@ -390,6 +350,7 @@
     transition: .25s all
 }
 
+/* === EMBEDDED / SUNKEN TRACK === */
 .PWrapper .PTabs .PTab .Slider {
     position: absolute;
     display: flex;
@@ -398,29 +359,52 @@
     height: .2083vw;
     justify-content: flex-start;
     align-items: center;
-    background-color: #1e1e1e;
-    border-radius: .2604vw
+
+    background-color: #161616;
+    border-radius: .2604vw;
+
+    /* REAL inset effect */
+    box-shadow:
+        inset 0 .12vw .22vw rgba(0,0,0,0.85),
+        inset 0 -.12vw .22vw rgba(255,255,255,0.08),
+        0 0 .15vw rgba(0,0,0,0.8);
 }
 
+/* === EMBEDDED PROGRESS BAR === */
 .PWrapper .PTabs .PTab .Slider .Progress {
     position: absolute;
     display: flex;
     height: 100%;
     justify-content: center;
     align-items: center;
-    background: rgb(225,225,225);
-    border-radius: .2604vw
+
+    background: #e1e1e1;
+    border-radius: .2604vw;
+
+    box-shadow:
+        inset 0 .1vw .2vw rgba(0,0,0,0.55),
+        inset 0 -.08vw .18vw rgba(255,255,255,0.25);
 }
 
+/* === THUMB WITH DEEP EMBEDDED BUTTON LOOK === */
 .PWrapper .PTabs .PTab .Slider .Progress .Thumb {
     position: absolute;
     display: flex;
     right: 0vw;
     width: .4167vw;
     height: .4167vw;
-    background-color: #e1e1e1;
-    border-radius: .5208vw
+
+    background-color: #fafafa;
+    border-radius: .5208vw;
+
+    /* Deep inset + outer glow */
+    box-shadow:
+        inset 0 .1vw .18vw rgba(0,0,0,0.6),
+        inset 0 -.1vw .2vw rgba(255,255,255,0.4),
+        0 0 .25vw rgba(255,255,255,0.35),
+        0 0 .35vw rgba(0,0,0,0.4);
 }
+
 
 .PWrapper .PTabs .PTab .Scrollable {
     position: absolute;
@@ -588,79 +572,42 @@
     transition: .25s height
 }
 
-/* === PREMIUM FOOTER (FODO STYLE) === */
 .PWrapper .PFooter {
     position: relative;
     display: flex;
     width: 19.0104vw;
     height: 1.5625vw;
-    margin-top: 0.25vw;
+    margin-top: .2083vw;
     justify-content: center;
     align-items: center;
-
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(0.3vw);
-
-    border-radius: 0.35vw;
-
-    /* glowing top border effect */
-    border-top: 0.08vw solid rgba(var(--menu-color), 0.65);
-
-    /* soft inner shadow + outside glow */
-    box-shadow:
-        inset 0 0 0.3vw rgba(255,255,255,0.05),
-        0 0 0.6vw rgba(var(--menu-color), 0.3);
-
-    transition: background 0.25s ease, box-shadow 0.25s ease;
+    background-color: #000;
+    border-radius: .3125vw
 }
 
-.PWrapper .PFooter:hover {
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow:
-        inset 0 0 0.3vw rgba(255,255,255,0.07),
-        0 0 0.9vw rgba(var(--menu-color), 0.45);
-}
-
-
-/* === ICON (logo) === */
 .PWrapper .PFooter img {
     position: absolute;
-    left: 0.5vw;
-    width: 1.05vw;
-    opacity: 0.9;
-    filter: drop-shadow(0 0 0.25vw rgba(var(--menu-color), 0.6));
-    transition: opacity .2s ease, transform .2s ease;
+    display: flex;
+    left: .3vw;
+    width: 1.0417vw
 }
 
-.PWrapper .PFooter img:hover {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-
-/* === BUILD TEXT === */
 .PWrapper .PFooter .PBuild {
     position: absolute;
-    left: 2vw;
-    font-size: 0.63vw;
-    font-weight: 350;
-    color: #ffffffcc;
-    letter-spacing: 0.02vw;
-    text-shadow: 0 0 0.35vw rgba(var(--menu-color), 0.5);
+    display: flex;
+    left: .5vw;
+    font-size: .625vw;
+    font-weight: 250;
+    color: #fff
 }
 
-
-/* === STATUS INDICATOR (right side) === */
 .PWrapper .PFooter .PIndicator {
     position: absolute;
-    right: 0.6vw;
-    font-size: 0.63vw;
-    font-weight: 350;
-    color: #ffffffcc;
-    letter-spacing: 0.02vw;
-    text-shadow: 0 0 0.35vw rgba(var(--menu-color), 0.5);
+    display: flex;
+    right: .5vw;
+    font-size: .625vw;
+    font-weight: 250;
+    color: #fff
 }
-
 
 .NotificationsWrapper {
     position: fixed;
@@ -10768,7 +10715,7 @@ const o0 = {
     lineHeight: 1.55,
     fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
     fontFamilyMonospace: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace",
-    primaryColor: "green",
+    primaryColor: "blue",
     respectReducedMotion: !0,
     cursorType: "default",
     defaultGradient: {
@@ -14197,8 +14144,8 @@ const Vg = () => {
       , [a,h] = L.useState(null)
       , [m,d] = L.useState(0)
       , [y,g] = L.useState({
-        link: "https://r2.fivemanage.com/j0YlVJ9wWJTFeImwfmRK2/OSINTBypassPhazeBanner.png",
-        color: "200, 0, 0"
+        link: "https://i.postimg.cc/d069swYY/Christmas-Snowman-Color-Code-006741.png",
+        color: "0, 75, 30"
     })
       , [v,P] = L.useState("0vw")
       , [f,c] = L.useState("1.5625vw")
